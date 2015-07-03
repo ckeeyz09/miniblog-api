@@ -1,0 +1,34 @@
+.top-header {
+    height: 250px;
+    background: url('http://imgur.com/NddbXEl.jpg') center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.tagline {
+    text-shadow: 0 0 10px #000;
+    color: rgba(255,255,255,.89);
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+div.logo {
+    width:165px;
+    height: 165px;
+    border: inset;
+    position: absolute;
+    bottom: -175px;
+    left: 500px;
+}
+
+h1 {
+  text-align: center;
+
+}
+

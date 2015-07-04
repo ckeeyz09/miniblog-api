@@ -1,29 +1,30 @@
 //CONSTRUCTORS
 
-var User = function (name, age, location, image,favorite_game,) {
+var User = function (name, handle, age, location, image) {
   this.name = name;
+  this.handle = handle;
   this.age = age;
   this.location = location;
   this.image = image;
-  this.favGame = favorite_game;
   this.post = localStorage.getItem("post");
   this.key = "post";
 }
 
-var Company = function (name, location, size, titles, image) {
-  this.name = name;
-  this.location = location;
-  this.size = size;
-  this.titles = titles;
-  this.image = image;
-}
+//For use at a later date
+// var Company = function (name, location, size, titles, image) {
+//   this.name = name;
+//   this.location = location;
+//   this.size = size;
+//   this.titles = titles;
+//   this.image = image;
+// }
 
-var Developer = function (name, job, company, current_project) {
-  this.name = name;
-  this.job = job;
-  this.company = company;
-  this.project = current_project;
-}
+// var Developer = function (name, job, company, current_project) {
+//   this.name = name;
+//   this.job = job;
+//   this.company = company;
+//   this.project = current_project;
+// }
 
 //LOCAL STORAGE
 
@@ -54,23 +55,4 @@ SaveRender.prototype.renderTemplate = function (template_source, where) {
     $(where).append(template(item));
   });
 
-}
-//INPUT FIELD
 
-// input field animation & expansion
-$('#post-input').focus(function()
-{
-    /*to make this flexible, I'm storing the current width in an attribute*/
-    $(this).attr('data-default', $(this).width());
-    $(this).animate({ width: 700 }, 'slow');
-    $(this).attr('data-default', $(this).height());
-    $(this).animate({ height: 150 }, 'fast');
-});
-$('#post-input').blur(function()
-{
-    /* lookup the original width */
-    var w = $(this).attr('data-default');
-    var h = $(this).attr('data-default');
-    $(this).animate({ height: h }, 'fast');
-    $(this).animate({ width: w }, 'slow');
-});

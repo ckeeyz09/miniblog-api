@@ -1,4 +1,4 @@
-.top-header {
+.jumbotron {
     height: 250px;
     background: url('http://imgur.com/NddbXEl.jpg') center center no-repeat scroll;
     -webkit-background-size: cover;
@@ -23,8 +23,8 @@ div.logo {
     height: 165px;
     border: inset;
     position: absolute;
-    bottom: -175px;
-    left: 500px;
+    margin: 0 auto;
+
 }
 
 h1 {
@@ -32,6 +32,16 @@ h1 {
 
 }
 
-#input-field {
-  
+.modal { 
+  background: rgba(000, 000, 000, 0.8); 
+  min-height:1000000px; 
+}
+
+#post-input {
+  position:absolute;
+  width:150px;
+  height:20px;
+  top:50%;
+  left:50%;
+  margin:-100px 0 0 -150px;
 }

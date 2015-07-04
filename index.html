@@ -36,6 +36,60 @@
                         <a href="#">Settings</a>
                     </li>
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add-user-modal">
+                  Sign up!
+                  </button>
+                    <div class="modal fade bs-example-modal-sm" id="add-user-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="false">
+                      <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title">Create New User</h4>
+                            </div>
+                            <div class="modal-body">
+
+                            <form id="modal-form">
+                              <div class="bold">
+                                Profile Image URL
+                              </div>
+                              <div class="margin-top-20">
+                                <input id="new-image" type="text" class="form-control" />
+                              </div>
+                              <div class="bold margin-top-20">
+                                Name
+                              </div>
+                              <div class="margin-top-20">
+                                <input id="new-name" type="text" class="form-control" />
+                              </div>
+                              <div class="bold margin-top-20">
+                                Username
+                              </div>
+                              <div class="margin-top-20">
+                                <input id="new-handle" type="text" class="form-control" />
+                              </div>
+                              <div class="bold margin-top-20">
+                                Age
+                              </div>
+                              <div class="margin-top-20">
+                                <input id="new-age" type="text" class="form-control" />
+                              </div>
+                              <div class="bold margin-top-20">
+                                Location
+                              </div>
+                              <div class="margin-top-20">
+                                <input id="new-location" type="text" class="form-control" />
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button id="save-user" type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -43,34 +97,58 @@
 </nav>
 <!-- Header Image -->
 <header class="top-header">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <h1 class="tagline">YOUR HOME FOR THE NEWEST GAME INFORMATION</h1>
-        <div class= "logo"><img src="http://i.imgur.com/F8en6eTb.png?2"></div>
+  <div class="jumbotron">
+    <div class="container">
+      <h2 class="tagline">YOUR HOME FOR THE NEWEST GAME INFORMATION</h1>
+      <div class= "logo"><img src="http://imgur.com/25JPNAVb.jpg"></div>
       </div>
     </div>
   </div>
 </header>
 <body>
   <div class="container">
-    <div class="rox">
-      <div id="input-field">
-        <textarea rows="1" cols="50" wrap="hard" id="post-input"></textarea>
+    <div class="row">
+      <div class="column-md-6">
+        <div class="form-group">
+          <label for="comment">What's on your mind?:</label>
+          <textarea class="form-control" rows="2" cols="10" id="comment"></textarea>
+        </div>
       </div>
+    </div>
+  <!--Template for new posts -->
+  <script>
+    <div class="row">
+      <div class="column-md-6 column-md-offset-3"
+        
+
+
+
+
+<!--   <div class="container-fluid">
+    <div class="row">
+      <div class="column-md-6 column-md-offset-3"
+        <div class="form-group">
+          <label for="comment">What's on your mind?:</label>
+          <textarea class="form-control" rows="5" id="comment"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row">
       <div class="column-md-3">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non porta ante. Fusce fringilla tempus quam, sit amet luctus velit ornare sed. Sed placerat nisi quis justo fermentum, condimentum facilisis ipsum fringilla. Fusce ac libero urna. Aliquam maximus eget sapien tempor blandit. 
       </div>
       <div class="column-md-6">
         <h1>News Feed</h1>
-        <script>
+        <script type="text/template" id="post-template">
           <div class="container">
           </div>
         </script>
       </div>
       <div class="column-md-3">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non porta ante. Fusce fringilla tempus quam, sit amet luctus velit ornare sed. Sed placerat nisi quis justo fermentum, condimentum facilisis ipsum fringilla. Fusce ac libero urna. Aliquam maximus eget sapien tempor blandit. 
       </div>
-    </div>
-  </div>
+  </div> -->
+
 
  <!-- jquery -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>

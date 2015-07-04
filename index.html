@@ -47,7 +47,7 @@
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                               <h4 class="modal-title">Create New User</h4>
                             </div>
-                            <div class="modal-body">
+                            <div class="user-modal-body">
 
                             <form id="modal-form">
                               <div class="bold">
@@ -106,48 +106,83 @@
   </div>
 </header>
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="column-md-6">
-        <div class="form-group">
-          <label for="comment">What's on your mind?:</label>
-          <textarea class="form-control" rows="2" cols="10" id="comment"></textarea>
-        </div>
-      </div>
+<div class="container">
+  <div class="row">
+    <div class=" col-xs-4">
+    <script>
+    </script>
     </div>
-  <!--Template for new posts -->
-  <script>
-    <div class="row">
-      <div class="column-md-6 column-md-offset-3"
-        
+    <div class="col-xs-8">
+      <!--Add Post Modal-->
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add-post-modal">
+      What's on your mind?
+      </button>
+      <div id="add-post-modal" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">New Update</h4>
+            </div>
+            <div class="modal-body">
 
-
-
-
-<!--   <div class="container-fluid">
-    <div class="row">
-      <div class="column-md-6 column-md-offset-3"
-        <div class="form-group">
-          <label for="comment">What's on your mind?:</label>
-          <textarea class="form-control" rows="5" id="comment"></textarea>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column-md-3">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non porta ante. Fusce fringilla tempus quam, sit amet luctus velit ornare sed. Sed placerat nisi quis justo fermentum, condimentum facilisis ipsum fringilla. Fusce ac libero urna. Aliquam maximus eget sapien tempor blandit. 
-      </div>
-      <div class="column-md-6">
-        <h1>News Feed</h1>
-        <script type="text/template" id="post-template">
-          <div class="container">
+            <form id="post-modal-form">
+              <div class="bold">
+                Image URL
+              </div>
+              <div class="margin-top-20">
+                <input id="new-image" type="text" class="form-control" placeholder="Optional" />
+              </div>
+              <div class="bold margin-top-20">
+                Game your are currently playing
+              </div>
+              <div class="margin-top-20">
+                <input id="new-game" type="text" class="form-control" placeholder="Optional" />
+              </div>
+              <div class="bold margin-top-20">
+                Status
+              </div>
+              <div class="margin-top-20">
+                <textarea class="form-control" id="new-status" rows="5" placeholder="What's on your mind?" required></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button id="save-post" type="submit" class="btn btn-primary">Save Post</button>
+            </div>
+            </form>
           </div>
-        </script>
+        </div>
       </div>
-      <div class="column-md-3">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non porta ante. Fusce fringilla tempus quam, sit amet luctus velit ornare sed. Sed placerat nisi quis justo fermentum, condimentum facilisis ipsum fringilla. Fusce ac libero urna. Aliquam maximus eget sapien tempor blandit. 
+    </div>
+   </div>
+  </div>
+</div>
+</body>
+      <!--Template for new posts -->
+  <script type="text/template" id="status-template">
+    <div class="row margin-top-20 post-container">
+      <div class="col-xs-5">
+        <img src= "<%= image %>" class="img-responsive" id="new-image" />
+        <br><br>
       </div>
-  </div> -->
+      <div class="col-xs-7">
+        <div class="margin-top-20">
+          <span class="bold">Title: </span><span>"<%= title %>"</span>
+        </div>
+        <div>
+          <span class="bold">Body: </span><span>"<%= body %>"</span>
+        </div>
+        <br>
+        <br><br>
+      </div>
+    </div>
+  </script>
+
+
+
+
+
 
 
  <!-- jquery -->

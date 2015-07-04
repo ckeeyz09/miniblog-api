@@ -1,14 +1,27 @@
+$(function){
+
 //CONSTRUCTORS
+
+var $newStatus = $("#post-modal-form");
+var statusTemplate = _.template($("#status-template").html());
 
 var User = function (name, handle, age, location, image) {
   this.name = name;
   this.handle = handle;
   this.age = age;
   this.location = location;
-  this.image = image;
+  this.userImage = image;
   this.post = localStorage.getItem("post");
   this.key = "post";
 }
+
+var Status = function (image, game, status) {
+  this.postImage = image;
+  this.game = game;
+  this.status = status;
+}
+
+Status.all = [];
 
 //For use at a later date
 // var Company = function (name, location, size, titles, image) {
@@ -46,13 +59,29 @@ SaveRender.prototype.saveToLs = function (input) {
 
 //RENDER TO TEMPLATE
 
-SaveRender.prototype.renderTemplate = function (template_source, where) {
+SaveRender.prototype.render = function() {
+  var index = Status.all.indexOf(this);
+  var $status = $(statusTemplate(this));
+  $status.attr("data-index", index);
+  $statusList.append($status);
+}
 
-  var items_json = JSON.parse(this.items);
-  var template = _.template($(template_source).html());
+Status.prototype = new SaveRender();
+Status.prototype.constructor = Status;
 
-  _.each(items_json, function(item){
-    $(where).append(template(item));
-  });
+//MODAL SUBMIT FUNCTION
+$newStatus.on("submit", function() {
+  event.preventDefault();
+  var statusImage = $("#new-image").val();
+  var statusGame = $("#new-game").val();
+  var statusBody = $("#new-body").val();
+  var newStatus = new Status(statusImage, statusGame, statusBody);
 
+  newStatus.saveToLs(newStatus);
+  newStatus.render();
 
+  console.log(Status.all);
+
+  $newStatus[0].reset();
+});
+};

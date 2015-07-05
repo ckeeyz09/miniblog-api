@@ -106,78 +106,80 @@
   </div>
 </header>
 <body>
-<div class="container">
-  <div class="row">
-    <div class=" col-xs-4">
-    <script>
-    </script>
-    </div>
-    <div class="col-xs-8">
-      <!--Add Post Modal-->
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add-post-modal">
-      What's on your mind?
-      </button>
-      <div id="add-post-modal" class="modal fade">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title">New Update</h4>
-            </div>
-            <div class="modal-body">
+  <div class="container">
+    <div class="row">
+      <div class=" col-xs-4">
+      <script>
+      </script>
+      </div>
+      <div class="col-xs-8">
+        <!--Add Post Modal-->
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add-post-modal">
+        What's on your mind?
+        </button>
+        <div id="add-post-modal" class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">New Update</h4>
+              </div>
+              <div class="modal-body">
 
-            <form id="post-modal-form">
-              <div class="bold">
-                Image URL
+              <form id="status-modal-form">
+                <div class="bold">
+                  Image URL
+                </div>
+                <div class="margin-top-20">
+                  <input id="new-image" type="text" class="form-control" placeholder="Optional" />
+                </div>
+                <div class="bold margin-top-20">
+                  Game your are currently playing
+                </div>
+                <div class="margin-top-20">
+                  <input id="new-game" type="text" class="form-control" placeholder="Optional" />
+                </div>
+                <div class="bold margin-top-20">
+                  Status
+                </div>
+                <div class="margin-top-20">
+                  <textarea class="form-control" id="new-status" rows="5" placeholder="What's on your mind?" required></textarea>
+                </div>
               </div>
-              <div class="margin-top-20">
-                <input id="new-image" type="text" class="form-control" placeholder="Optional" />
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="save-post" type="submit" class="btn btn-primary">Save Post</button>
               </div>
-              <div class="bold margin-top-20">
-                Game your are currently playing
-              </div>
-              <div class="margin-top-20">
-                <input id="new-game" type="text" class="form-control" placeholder="Optional" />
-              </div>
-              <div class="bold margin-top-20">
-                Status
-              </div>
-              <div class="margin-top-20">
-                <textarea class="form-control" id="new-status" rows="5" placeholder="What's on your mind?" required></textarea>
-              </div>
+              </form>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button id="save-post" type="submit" class="btn btn-primary">Save Post</button>
-            </div>
-            </form>
           </div>
         </div>
       </div>
     </div>
-   </div>
   </div>
-</div>
-</body>
+  <div id="status-container">
+
+
       <!--Template for new posts -->
   <script type="text/template" id="status-template">
     <div class="row margin-top-20 post-container">
       <div class="col-xs-5">
-        <img src= "<%= image %>" class="img-responsive" id="new-image" />
+        <img src= <%= image %> class="img-responsive" id="new-image" />
         <br><br>
       </div>
       <div class="col-xs-7">
         <div class="margin-top-20">
-          <span class="bold">Title: </span><span>"<%= title %>"</span>
+          <span class="bold">Game I am currently playing: </span><span> <%= game %> </span>
         </div>
         <div>
-          <span class="bold">Body: </span><span>"<%= body %>"</span>
+          <span class="bold">What is on my mind: </span><span> <%= status %> </span>
         </div>
         <br>
         <br><br>
       </div>
     </div>
   </script>
+  </div>
 
 
 
@@ -195,7 +197,7 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 
   <!-- custom script -->
-  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="script2.js"></script>
 
   <!-- underscore template -->
   <script type="text/template" id="todo-template">

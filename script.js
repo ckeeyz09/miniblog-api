@@ -1,8 +1,8 @@
-$(function){
+
 
 //CONSTRUCTORS
 
-var $newStatus = $("#post-modal-form");
+var $newStatus = $("#status-modal-form");
 var statusTemplate = _.template($("#status-template").html());
 
 var User = function (name, handle, age, location, image) {
@@ -19,6 +19,8 @@ var Status = function (image, game, status) {
   this.postImage = image;
   this.game = game;
   this.status = status;
+  this.items = localStorage.getItem("status");
+  this.key = "status";
 }
 
 Status.all = [];
@@ -41,9 +43,9 @@ Status.all = [];
 
 //LOCAL STORAGE
 
-function SaveRender() {}
+// function SaveRender() {}
 
-SaveRender.prototype.saveToLs = function (input) {
+Status.prototype.saveToLs = function (input) {
 
   if (this.items) {
     items_json = JSON.parse(this.items)
@@ -54,34 +56,49 @@ SaveRender.prototype.saveToLs = function (input) {
   items_json.push(input);
 
   localStorage.setItem(this.key, JSON.stringify(items_json));
-
+  // Status.all.push(this);
 }
 
 //RENDER TO TEMPLATE
 
-SaveRender.prototype.render = function() {
-  var index = Status.all.indexOf(this);
-  var $status = $(statusTemplate(this));
-  $status.attr("data-index", index);
-  $statusList.append($status);
+Status.prototype.render = function(template_source, where) {
+
+  var items_json = JSON.parse(this.items);
+  var template = _.template($(template_source).html());
+
+  _.each(items_json, function(item){
+    $(where).append(template(item));
+  });
+
+
+
+  // var index = Status.all.indexOf(this);
+  // var $status = $(statusTemplate(this));
+  // $status.attr("data-index", index);
+  // $statusList.append($status);
 }
 
-Status.prototype = new SaveRender();
-Status.prototype.constructor = Status;
-
-//MODAL SUBMIT FUNCTION
-$newStatus.on("submit", function() {
-  event.preventDefault();
+// Status.prototype = new SaveRender();
+// Status.prototype.constructor = Status;
   var statusImage = $("#new-image").val();
   var statusGame = $("#new-game").val();
   var statusBody = $("#new-body").val();
   var newStatus = new Status(statusImage, statusGame, statusBody);
 
-  newStatus.saveToLs(newStatus);
-  newStatus.render();
+
+//MODAL SUBMIT FUNCTION
+$newStatus.on("submit", function() {
+  event.preventDefault();
+  // var statusImage = $("#new-image").val();
+  // var statusGame = $("#new-game").val();
+  // var statusBody = $("#new-body").val();
+  // var newStatus = new Status(statusImage, statusGame, statusBody);
+
+  newStatus.saveToLs(newBook);
+  newStatus.render('#book-template', '#book-container');
 
   console.log(Status.all);
 
   $newStatus[0].reset();
-});
-};
+  $.modal('hide');
+}

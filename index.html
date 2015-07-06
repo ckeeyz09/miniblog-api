@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- bootstrap css -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<html>
+  <head>
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-  <!-- custom styles -->
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Game Feed: Home of Game Information</title>
-</head>
+    <!-- custom styles -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Game Feed: Home of Game Information</title>
+  </head>
 <body>
-<!-- NavBar -->
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <!-- NavBar -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -94,9 +94,9 @@
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
-</nav>
-<!-- Header Image -->
-<header class="top-header">
+  </nav>
+  <!-- Header Image -->
+  <header class="top-header">
   <div class="jumbotron">
     <div class="container">
       <h2 class="tagline">YOUR HOME FOR THE NEWEST GAME INFORMATION</h1>
@@ -104,15 +104,12 @@
       </div>
     </div>
   </div>
-</header>
-<body>
-  <div class="container">
-    <div class="row">
-      <div class=" col-xs-4">
-      <script>
-      </script>
-      </div>
-      <div class="col-xs-8">
+  </header>
+    <div class="container">
+      <div class="row">
+        <div class=" col-xs-4">
+        </div>
+        <div class="col-xs-8">
         <!--Add Post Modal-->
         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add-post-modal">
         What's on your mind?
@@ -157,28 +154,29 @@
       </div>
     </div>
   </div>
-  <div id="status-container">
+  <div class="container">
+    <div class="col-xs-9" id="post-list"></div>
 
-
-      <!--Template for new posts -->
-  <script type="text/template" id="status-template">
-    <div class="row margin-top-20 post-container">
-      <div class="col-xs-5">
-        <img src= <%= image %> class="img-responsive" id="new-image" />
-        <br><br>
-      </div>
-      <div class="col-xs-7">
-        <div class="margin-top-20">
-          <span class="bold">Game I am currently playing: </span><span> <%= game %> </span>
+        <!--Template for new posts -->
+      <script type="text/template" id="status-template">
+        <div class="row margin-top-20 post-container">
+          <div class="col-xs-5">
+            <img src="<%= image %>" class="img-responsive" id="new-image" />
+            <br><br>
+          </div>
+          <div class="col-xs-7">
+            <div class="margin-top-20">
+              <span class="bold">Game I am currently playing: </span><span> <%= game %> </span>
+            </div>
+            <div>
+              <span class="bold">What is on my mind: </span><span> <%= status %> </span>
+            </div>
+            <br>
+            <br><br>
+          </div>
         </div>
-        <div>
-          <span class="bold">What is on my mind: </span><span> <%= status %> </span>
-        </div>
-        <br>
-        <br><br>
-      </div>
+      </script>
     </div>
-  </script>
   </div>
 
 
@@ -186,8 +184,7 @@
 
 
 
-
- <!-- jquery -->
+  <!-- jquery -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
   <!-- bootstrap js -->
@@ -199,7 +196,6 @@
   <!-- custom script -->
   <script type="text/javascript" src="script2.js"></script>
 
-  <!-- underscore template -->
-  <script type="text/template" id="todo-template">
+
 </body>
 </html>

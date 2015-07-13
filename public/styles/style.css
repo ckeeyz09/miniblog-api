@@ -45,3 +45,15 @@ h1 {
   left:50%;
   margin:-100px 0 0 -150px;
 }
+
+.edit-pencil {
+  color: #aaaaaa;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.edit-pencil:hover {
+  color: #333333;
+}
+
+
